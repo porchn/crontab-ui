@@ -1,0 +1,27 @@
+version: '2'
+
+services:
+  minicron:
+    image: jamesrwhite/minicron:v0.9.7
+    container_name: minicron
+    volumes:
+      - ./config:/etc/minicron:Z
+    environment:
+      - TZ=Asia/Bangkok
+    restart: always
+    networks:
+      - cronnetwork
+    ports:
+      - "9292:9292"
+      - "9222:22"
+
+
+networks:
+  cronnetwork:
+    driver: bridge
+    ipam:
+      driver: default
+      config:
+        - subnet: 10.20.0.0/16
+          ip_range: 10.20.5.0/24
+          gateway: 10.20.5.254
