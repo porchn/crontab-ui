@@ -2,7 +2,7 @@ version: '2'
 
 services:
   minicron:
-    build: .
+    image: jamesrwhite/minicron:v0.9.7
     container_name: minicron
     volumes:
       - ./config:/etc/minicron:Z
