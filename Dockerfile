@@ -12,4 +12,6 @@ RUN mkdir -p /etc/minicron
 ADD ./setup/minicron.toml /etc/minicron
 RUN ln -s /etc/minicron/minicron.toml /etc/minicron.toml
 
+VOLUME ['/etc/minicron']
+
 EXPOSE 9292
