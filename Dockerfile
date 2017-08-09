@@ -9,8 +9,8 @@ RUN dpkg-reconfigure -f noninteractive tzdata
  
 RUN rm -f /etc/service/sshd/down
 RUN mkdir -p /etc/minicron
-ADD ./setup/minicron.toml /etc/minicron
-RUN ln -s /etc/minicron/minicron.toml /etc/minicron.toml
+#ADD ./setup/minicron.toml /etc/minicron
+#RUN ln -s /etc/minicron/minicron.toml /etc/minicron.toml
 
 VOLUME ['/etc/minicron']
 
